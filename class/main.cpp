@@ -1,3 +1,4 @@
+//g++ -o ball main.cpp ball.cpp
 #include <iostream>
 #include "ball.h"
 using namespace std;
@@ -14,4 +15,4 @@ int main(){
     //x.~ball();
 }
 
-//g++ -o ball main.cpp ball.cpp
+
