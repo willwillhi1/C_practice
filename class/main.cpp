@@ -11,7 +11,7 @@ int main(){
     x->show();    //print "I am basketball by virtual function"
     x->set_WH(m,n);
     cout << "the ball's sphere is:" << x->sphere() << endl;
-    //cout << "the ball's volume is:" << x->volume() << endl;
+    //cout << "the basketball's volume is:" << x->volume() << endl;
     //x.~ball();
 }
 
