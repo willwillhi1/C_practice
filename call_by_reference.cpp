@@ -26,3 +26,33 @@ int main()
     swap(*c, *d);                             
     printf("After: c = %d, d = %d\n",*c,*d);
 }
+
+/*
+#include <iostream>
+
+using namespace std;
+
+void swap(int *,int *);
+
+int main()
+{
+    int a = 1;
+    int b = 2;
+    int *p1 = &a,*p2 = &b;
+    
+    cout << "a: " << a << ",b: " << b << endl;
+    swap(a, b);
+    cout << "a: " << a << ",b: " << b << endl;
+    return 0;
+}
+
+
+void swap(int *a, int *b)
+{
+    int tmp = *a;
+    *a = *b;
+    *b = tmp;
+    return;
+}
+
+*/
