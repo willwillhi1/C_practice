@@ -13,7 +13,7 @@ private:
     int *discover;
     int *finish;
     int *predecessor;
-    int *t;
+    int t;
 public:
     Graph():num_vertex(0){};
     Graph(int n):num_vertex(n){
@@ -38,10 +38,8 @@ void Graph::DFS(int start)
     finish = new int[num_vertex];
     predecessor = new int[num_vertex];
     
-    //cout << "check" << endl;    
-        
-    t = new int;
-    *t = 0;
+    //cout << "check" << endl;           
+    t = 0;
     //cout << "ok" << endl;
     for(int i = 0;i < num_vertex;i++)
     {
@@ -74,7 +72,7 @@ void Graph::DFSvisit(int vertex)
     //cout << vertex << endl;
     //cout << "ok" << endl;
     color[vertex] = 1;
-    discover[vertex] = ++(*t);
+    discover[vertex] = ++t;
     
     for(int i = 0;i < AdjList[vertex].size();i++)
     {
@@ -86,7 +84,7 @@ void Graph::DFSvisit(int vertex)
         }
     }
     color[vertex] = 2;
-    finish[vertex] = (*t)++;
+    finish[vertex] = ++t;
 }
 
 int* Graph::visitorder()
