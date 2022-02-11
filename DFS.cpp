@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 
 using namespace std;
 
@@ -21,6 +22,7 @@ public:
     void AddEdgelist(int from, int to);
     void DFS(int start);
     void DFSvisit(int vertex);
+    int* visitorder();
 };
 
 void Graph::AddEdgelist(int from, int to)
@@ -87,6 +89,24 @@ void Graph::DFSvisit(int vertex)
     finish[vertex] = (*t)++;
 }
 
+int* Graph::visitorder()
+{
+    int order[num_vertex];
+    for(int i = 0;i < num_vertex;i++)
+        order[i] = discover[i];
+    sort(order, order+num_vertex);
+    
+    int *index = new int[num_vertex];
+    for(int i = 0;i < num_vertex;i++)
+    {
+        for(int j = 0;j < num_vertex;j++)
+        {
+            if(order[i] == discover[j])
+                index[i] = j;
+        }
+    }
+    return index;
+}
 
 int main ()
 {
