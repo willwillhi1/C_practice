@@ -11,7 +11,6 @@ private:
     int *distance;
     int *color;
     int *predecessor;
-    int t;
     int vertex_num;
 public:
     Graph():vertex_num(0){};
