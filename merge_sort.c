@@ -50,7 +50,8 @@ void merge(int *arr, int l, int m, int r)
 
 void mergesort(int *arr, int l, int r)
 {
-    if (l < r) {
+    if (l < r) 
+    {
         //printf("***\n");
         
         int m = (r+l)/2;
