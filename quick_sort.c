@@ -39,9 +39,7 @@ void quicksort(int *arr, int front, int end)
 
 int main()
 {
-    //int arr[] = {4, 1, 9, 6, 7, 3, 8, 2, 5};
-    int *arr = malloc(sizeof(int)*9);
-    arr = {4, 1, 9, 6, 7, 3, 8, 2, 5};
+    int arr[] = {4, 1, 9, 6, 7, 3, 8, 2, 5};
     quicksort(&arr[0], 0, 8);
     for (int i = 0; i < 9; i++) 
     {
