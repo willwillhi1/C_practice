@@ -76,11 +76,11 @@ int main()
     int arr_size = sizeof(arr) / sizeof(arr[0]);
   
     printf("Given array is \n");
-    printArray(&arr[0], arr_size);
+    printArray(arr, arr_size);
   
-    mergesort(&arr[0], 0, arr_size - 1);
+    mergesort(arr, 0, arr_size - 1);
   
     printf("\nSorted array is \n");
-    printArray(&arr[0], arr_size);
+    printArray(arr, arr_size);
     return 0;
 }
