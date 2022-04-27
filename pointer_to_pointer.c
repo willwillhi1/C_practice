@@ -25,7 +25,7 @@ int main()
 
 
 
-//EXAMPLE: leetcode_102
+//EXAMPLE1: leetcode_102
 
 int maxDepthTree (struct TreeNode* root);
 void InOrder (struct TreeNode* root, int** array, int* nums, int depth);
@@ -69,4 +69,40 @@ void arrayAdd (int** array, int size)
   for (int i = 0; i < size; i++)
     (*array)[i] = temp[i];
   free (temp);
+}
+
+
+//EXAMPLE2: leetcode_102(二維陣列修改中間記憶體位置)
+
+void inorder(int **ans, struct TreeNode *node, int depth, int *returnColumnSizes) {
+    if (!node) return;
+    int size = (returnColumnSizes[depth]++) + 1;
+    //printf("%p\n", ans[depth]);
+    int *temp = ans[depth];
+    ans[depth] = malloc(size*sizeof(int));
+    for (int i = 0; i < size-1; i++)
+        ans[depth][i] = temp[i];
+    ans[depth][size-1] = node->val;
+    /*
+    for (int i = 0; i < size; i++) {
+        printf("%d ", ans[depth][i]);
+    }
+    printf("\n");
+    */
+    //free(temp);
+    inorder(ans, node->left, depth+1, returnColumnSizes);
+    inorder(ans, node->right, depth+1, returnColumnSizes);
+    return;
+}
+
+int** levelOrder(struct TreeNode* root, int* returnSize, int** returnColumnSizes) {
+    int depth = finddepth(root);
+    //printf("%d\n", depth);
+    *returnSize = depth;
+    *returnColumnSizes = calloc(depth, sizeof(int));
+    int **ans = malloc(sizeof(int*)*depth);
+    for (int i = 0; i < depth; i++)
+        ans[i] = calloc(1, sizeof(int));
+    inorder(ans, root, 0, *returnColumnSizes);
+    return ans;
 }
