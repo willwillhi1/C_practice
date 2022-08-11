@@ -1,3 +1,4 @@
+// reference https://hackmd.io/@sysprog/c-linked-list#Merge-Sort-%E7%9A%84%E5%AF%A6%E4%BD%9C
 #include <stdio.h>
 #define CON node_t[]
 typedef struct ListNode {
