@@ -1,3 +1,4 @@
+// reference https://hackmd.io/@sysprog/c-linked-list#Quick-sort-%E9%81%9E%E8%BF%B4%E7%89%88%E6%9C%AC
 #include <stdio.h>
 #define CON node_t[]
 typedef struct ListNode {
